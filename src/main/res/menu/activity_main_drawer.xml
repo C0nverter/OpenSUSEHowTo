@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:title="Strona główna"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:id="@+id/nav_home"/>
+
+    <item
+        android:title="YAST - Yet Another Setup Tool"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_yast"/>
+
+    <item
+        android:title="Usługi sieciowe"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_network"/>
+
+    <item
+        android:title="Tożsamość i bezpieczeństwo"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_users"/>
+
+    <item
+        android:title="Administracja zdalna"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_remote"/>
+
+    <item
+        android:title="Zarządzanie przestrzenią dyskową"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_disks"/>
+
+    <item
+        android:title="Instalacja graficzna OpenSUSE"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_install"/>
+
+    <item
+        android:title="Personalizacja"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_custom"/>
+
+    <item
+        android:title="GVim - graficzny Vim"
+        android:icon="@drawable/ic_desktop_black_24dp"
+        android:id="@+id/gui_gvim"/>
+
+    <item
+        android:title="System plików OpenSUSE"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_fs"/>
+
+    <item
+        android:title="Praca z wierszem poleceń"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_intro"/>
+
+    <item
+        android:title="Edytor tekstowy Vim"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_vim"/>
+
+    <item
+        android:title="Zdalna administracja"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_remote"/>
+
+    <item
+        android:title="Inicjalizacja systemu"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_init"/>
+
+    <item
+        android:title="Zarządzanie procesami"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_process"/>
+
+    <item
+        android:title="Tożsamość i bezpieczeństwo"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_users"/>
+
+    <item
+        android:title="Zarządzanie oprogramowaniem"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_software"/>
+
+    <item
+        android:title="Administracja i monitoring"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_admin"/>
+
+    <item
+        android:title="Odzyskiwanie systemu"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:id="@+id/cli_rescue"/>
+
+</menu>

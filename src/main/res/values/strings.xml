@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">OpenSUSE How-To</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="navigation_drawer_open">Otwórz panel boczny</string>
+    <string name="navigation_drawer_close">Zamknij panel boczny</string>
+    <string name="nav_header_title">OpenSUSE How-To</string>
+    <string name="nav_header_subtitle">pl.bugbreaker@gmail.com</string>
+    <string name="nav_header_desc">Nagłówek</string>
+    <string-array name="nav_fragment_titles">
+        <item>OpenSUSE How-To</item>
+        <item>YAST - Yet Another Setup Tool</item>
+        <item>Usługi sieciowe</item>
+        <item>Tożsamość i bezpieczeństwo</item>
+        <item>Administracja zdalna</item>
+        <item>Zarządzanie przestrzenią</item>
+        <item>Instalacja graficzna</item>
+        <item>Personalizacja</item>
+        <item>GVim - graficzny</item>
+        <item>System plików OpenSUSE</item>
+        <item>Praca z wierszem poleceń</item>
+        <item>Edytor tekstowy Vim</item>
+        <item>Zdalna administracja</item>
+        <item>Inicjalizacja systemu</item>
+        <item>Zarządzanie procesami</item>
+        <item>Tożsamość i bezpieczeństwo</item>
+        <item>Zarządzanie aplikacjami</item>
+        <item>Administracja i monitoring</item>
+        <item>Odzyskiwanie systemu</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
