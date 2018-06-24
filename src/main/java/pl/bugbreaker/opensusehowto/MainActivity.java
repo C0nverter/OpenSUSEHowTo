@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -82,20 +83,20 @@ public class MainActivity extends AppCompatActivity {
             drawer.closeDrawers();
             return;
         }
+        Log.d("FragmentTransaction","Step before transaction");
 
         Runnable pendingRunnable = new Runnable() {
             @Override
             public void run() {
                 Fragment fragment = getHomeFragment();
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                Log.d("FragmentTransaction","Transaction began");
                 fragmentTransaction.replace(R.id.frame_container, fragment, CURR_TAG);
                 fragmentTransaction.commitAllowingStateLoss();
             }
         };
 
-        if (pendingRunnable != null) {
-            mHandler.post(pendingRunnable);
-        }
+        mHandler.post(pendingRunnable);
         drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawers();
         invalidateOptionsMenu();
@@ -109,74 +110,92 @@ public class MainActivity extends AppCompatActivity {
                 return fragment;
             case 1:
                 u.setItemLoaded(1);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 2:
                 u.setItemLoaded(2);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 3:
                 u.setItemLoaded(3);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 4:
                 u.setItemLoaded(4);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 5:
                 u.setItemLoaded(5);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 6:
                 u.setItemLoaded(6);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 7:
                 u.setItemLoaded(7);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 8:
                 u.setItemLoaded(8);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 9:
                 u.setItemLoaded(9);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 10:
                 u.setItemLoaded(10);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 11:
                 u.setItemLoaded(11);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 12:
                 u.setItemLoaded(12);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 13:
                 u.setItemLoaded(13);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 14:
                 u.setItemLoaded(14);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 15:
                 u.setItemLoaded(15);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 16:
                 u.setItemLoaded(16);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 17:
                 u.setItemLoaded(17);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             case 18:
                 u.setItemLoaded(18);
+                new AsyncListLoad(u.getURL()).execute();
                 fragment = new ContentFragment();
                 return fragment;
             default:

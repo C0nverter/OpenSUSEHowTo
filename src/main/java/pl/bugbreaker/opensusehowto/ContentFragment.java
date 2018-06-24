@@ -21,12 +21,11 @@ import java.util.ArrayList;
 public class ContentFragment extends Fragment {
 
     ContentAdapter adapter;
-    View v;
-    RecyclerView recyclerView;
     Utils u = new Utils();
-    RecyclerView.LayoutManager lm = new LinearLayoutManager(getActivity());
+    LinearLayoutManager lm = new LinearLayoutManager(getContext());
 
     public ContentFragment() {
+        //empty public constructor
     }
 
     @Override
@@ -37,11 +36,14 @@ public class ContentFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.content_fragment,container,false);
-        adapter = new ContentAdapter(getContext(), u.getItemLoaded());
-        recyclerView = v.findViewById(R.id.content_rv);
+        View v = inflater.inflate(R.layout.content_fragment,container,false);
+        adapter = new ContentAdapter(getActivity(), u.getDataSet());
+        RecyclerView recyclerView = v.findViewById(R.id.content_rv);
+        Log.d("Fragment","RecyclerView added");
         recyclerView.setLayoutManager(lm);
+        Log.d("Fragment","LayoutManager is set");
         recyclerView.setAdapter(adapter);
+        Log.d("Fragment","Adapter is set");
         return v;
     }
 }
