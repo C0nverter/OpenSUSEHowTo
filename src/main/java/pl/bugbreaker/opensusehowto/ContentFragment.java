@@ -11,18 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ContentFragment extends Fragment {
 
     ContentAdapter adapter;
-    Utils u = new Utils();
-    LinearLayoutManager lm = new LinearLayoutManager(getContext());
+    Utils u = Utils.getInstance();
+    private static final String TAG = "ContentFragment";
+    protected ArrayList<DataItem> dataSet;
+    protected RecyclerView.LayoutManager lm;
+    protected RecyclerView recyclerView;
 
     public ContentFragment() {
         //empty public constructor
@@ -31,19 +29,26 @@ public class ContentFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initData();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.content_fragment,container,false);
-        adapter = new ContentAdapter(getActivity(), u.getDataSet());
-        RecyclerView recyclerView = v.findViewById(R.id.content_rv);
+        v.setTag(TAG);
+        recyclerView = v.findViewById(R.id.content_rv);
         Log.d("Fragment","RecyclerView added");
+        lm = new LinearLayoutManager(getActivity());
+        adapter = new ContentAdapter(dataSet);
         recyclerView.setLayoutManager(lm);
         Log.d("Fragment","LayoutManager is set");
         recyclerView.setAdapter(adapter);
         Log.d("Fragment","Adapter is set");
         return v;
+    }
+
+    public void initData() {
+        dataSet = u.getDataSet();
     }
 }

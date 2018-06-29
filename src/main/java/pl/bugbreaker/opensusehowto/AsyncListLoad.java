@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class AsyncListLoad extends AsyncTask<String,Void,ArrayList<DataItem>> {
 
     private String target_url;
-    public ArrayList<DataItem> dataSet;
-    private Utils u = new Utils();
+    private ArrayList<DataItem> dataSet;
+    private Utils u = Utils.getInstance();
 
     public AsyncListLoad(String url) {
         this.target_url = url;
@@ -22,13 +22,6 @@ public class AsyncListLoad extends AsyncTask<String,Void,ArrayList<DataItem>> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-    }
-
-    @Override
-    protected void onPostExecute(ArrayList<DataItem> arrayList) {
-        arrayList = this.dataSet;
-        u.setDataSet(arrayList);
-        Log.d("DataSetup","DataSet loaded");
     }
 
     @Override
@@ -53,11 +46,21 @@ public class AsyncListLoad extends AsyncTask<String,Void,ArrayList<DataItem>> {
 
                 dataSet.add(new DataItem(mSectionTitle,mSectionDesc));
                 Log.d("DataItemCreation","Item no. "+i+" added");
+                Log.d("DataItemCreation","Link: "+u.getURL());
+                Log.d("DataItemCreation","Item title: "+dataSet.get(i).getTopicTitle());
+                Log.d("DataItemCreation","Item description: "+dataSet.get(i).getTopicDesc());
             }
             publishProgress();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return dataSet;
+    }
+
+    @Override
+    protected void onPostExecute(ArrayList<DataItem> arrayList) {
+        arrayList = this.dataSet;
+        u.setDataSet(arrayList);
+        Log.d("DataSetup","DataSet acquired and loaded.");
     }
 }

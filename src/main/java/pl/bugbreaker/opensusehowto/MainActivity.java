@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean shouldLoadHomeOnBack = true;
     Fragment fragment;
 
-    Utils u = new Utils();
+    Utils u = Utils.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("FragmentTransaction","Transaction began");
                 fragmentTransaction.replace(R.id.frame_container, fragment, CURR_TAG);
                 fragmentTransaction.commitAllowingStateLoss();
+                Log.d("FragmentTransaction","Transaction "+CURR_TAG+" is finished");
             }
         };
 

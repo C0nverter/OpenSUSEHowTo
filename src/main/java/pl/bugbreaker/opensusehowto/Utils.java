@@ -3,6 +3,15 @@ package pl.bugbreaker.opensusehowto;
 import java.util.ArrayList;
 
 public class Utils {
+    private static final Utils ourInstance = new Utils();
+
+    public static Utils getInstance() {
+        return ourInstance;
+    }
+
+    private Utils() {
+    }
+
     public int itemLoaded = 0;
     private ArrayList<DataItem> dataSet = new ArrayList<>();
 
@@ -23,7 +32,7 @@ public class Utils {
     }
 
     public String getURL() {
-        switch (getItemLoaded()) {
+        switch (this.getItemLoaded()) {
             case 1:
                 return "http://susehowto.000webhostapp.com/gui/yast";
             case 2:
