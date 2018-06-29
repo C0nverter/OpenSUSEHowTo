@@ -1,8 +1,10 @@
 package pl.bugbreaker.opensusehowto;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Utils {
+
     private static final Utils ourInstance = new Utils();
 
     public static Utils getInstance() {
@@ -12,8 +14,24 @@ public class Utils {
     private Utils() {
     }
 
+    public ArrayList<String> subURL = new ArrayList<>();
+
+    public String getSubURL(int i) {
+        return subURL.get(i);
+    }
+
+    public void addSubURL(String subURL, int stringIndex) {
+        this.subURL.add(stringIndex,subURL);
+    }
+
+    public void clearSubList() {
+        subURL.clear();
+    }
+
     public int itemLoaded = 0;
+    public int subItemLoaded;
     private ArrayList<DataItem> dataSet = new ArrayList<>();
+    private ArrayList<Article> articleSet = new ArrayList<>();
 
     public int getItemLoaded() {
         return itemLoaded;
@@ -29,6 +47,22 @@ public class Utils {
 
     public ArrayList<DataItem> getDataSet() {
         return dataSet;
+    }
+
+    public ArrayList<Article> getArticleSet() {
+        return articleSet;
+    }
+
+    public void setArticleSet(ArrayList<Article> articleSet) {
+        this.articleSet = articleSet;
+    }
+
+    public int getSubItemLoaded() {
+        return subItemLoaded;
+    }
+
+    public void setSubItemLoaded(int subItemLoaded) {
+        this.subItemLoaded = subItemLoaded;
     }
 
     public String getURL() {
