@@ -34,7 +34,7 @@ public class DynamicActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
-        ft.replace(R.id.article_container, new ArticleFragment()).commit();
+        ft.add(new ArticleFragment(),ArticleFragment.TAG).commit();
     }
 
 }

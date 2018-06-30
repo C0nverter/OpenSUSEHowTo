@@ -1,6 +1,7 @@
 package pl.bugbreaker.opensusehowto;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -27,7 +28,7 @@ public class AsyncArticleLoad extends AsyncTask<String, Void, ArrayList<Article>
     protected ArrayList<Article> doInBackground(String... strings) {
         articleSet = new ArrayList<>();
         try {
-            Document subDocument = Jsoup.connect(u.getSubURL(u.itemLoaded)).get();
+            Document subDocument = Jsoup.connect(u.getSubURL(u.getSubItemLoaded())).get();
             Elements subDocParagraphSize = subDocument.select("article");
             int mSubDocSize = subDocParagraphSize.size();
 
@@ -39,6 +40,12 @@ public class AsyncArticleLoad extends AsyncTask<String, Void, ArrayList<Article>
 
                 Elements artParHTMLContents = subDocument.select("article").select("p[class=article-content]").eq(i);
                 String artParHTMLContent = artParHTMLContents.html();
+
+                articleSet.add(new Article(artParTitle,artParHTMLContent));
+                Log.d("ArticleItemCreation","Item no. "+i+" added");
+                Log.d("ArticleItemCreation","Link: "+u.getSubURL(i));
+                Log.d("ArticleItemCreation","Item title: "+articleSet.get(i).getArtParTitle());
+                Log.d("ArticleItemCreation","Item description: "+articleSet.get(i).getArtParContent());
             }
         } catch (IOException e) {
             e.printStackTrace();

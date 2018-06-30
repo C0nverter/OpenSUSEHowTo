@@ -68,41 +68,41 @@ public class Utils {
     public String getURL() {
         switch (this.getItemLoaded()) {
             case 1:
-                return "http://susehowto.000webhostapp.com/gui/yast";
+                return "http://susehowto.dx.am/gui/yast";
             case 2:
-                return "http://susehowto.000webhostapp.com/gui/network";
+                return "http://susehowto.dx.am/gui/network";
             case 3:
-                return "http://susehowto.000webhostapp.com/gui/users";
+                return "http://susehowto.dx.am/gui/users";
             case 4:
-                return "http://susehowto.000webhostapp.com/gui/remote";
+                return "http://susehowto.dx.am/gui/remote";
             case 5:
-                return "http://susehowto.000webhostapp.com/gui/disks";
+                return "http://susehowto.dx.am/gui/disks";
             case 6:
-                return "http://susehowto.000webhostapp.com/gui/install";
+                return "http://susehowto.dx.am/gui/install";
             case 7:
-                return "http://susehowto.000webhostapp.com/gui/custom";
+                return "http://susehowto.dx.am/gui/custom";
             case 8:
-                return "http://susehowto.000webhostapp.com/gui/gvim";
+                return "http://susehowto.dx.am/gui/gvim";
             case 9:
-                return "http://susehowto.000webhostapp.com/cli/fs";
+                return "http://susehowto.dx.am/cli/fs";
             case 10:
-                return "http://susehowto.000webhostapp.com/cli/intro";
+                return "http://susehowto.dx.am/cli/intro";
             case 11:
-                return "http://susehowto.000webhostapp.com/cli/vim";
+                return "http://susehowto.dx.am/cli/vim";
             case 12:
-                return "http://susehowto.000webhostapp.com/cli/remote";
+                return "http://susehowto.dx.am/cli/remote";
             case 13:
-                return "http://susehowto.000webhostapp.com/cli/init";
+                return "http://susehowto.dx.am/cli/init";
             case 14:
-                return "http://susehowto.000webhostapp.com/cli/process";
+                return "http://susehowto.dx.am/cli/process";
             case 15:
-                return "http://susehowto.000webhostapp.com/cli/users";
+                return "http://susehowto.dx.am/cli/users";
             case 16:
-                return "http://susehowto.000webhostapp.com/cli/software";
+                return "http://susehowto.dx.am/cli/software";
             case 17:
-                return "http://susehowto.000webhostapp.com/cli/admin";
+                return "http://susehowto.dx.am/cli/admin";
             case 18:
-                return "http://susehowto.000webhostapp.com/cli/rescue";
+                return "http://susehowto.dx.am/cli/rescue";
             default:
                 return "";
         }

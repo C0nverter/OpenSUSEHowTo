@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectNavMenu() {
-        navigationView.getMenu().getItem(navItemIndex).setChecked(true);
+        navigationView.getMenu().getItem(navItemIndex).setChecked(false);
     }
 
     private void setUpNavigationView() {
@@ -297,9 +297,6 @@ public class MainActivity extends AppCompatActivity {
                         CURR_TAG = TAG_18;
                         break;
                 }
-                if (item.isChecked()) {
-                    item.setChecked(false);
-                } else item.setChecked(true);
                 loadHomeFragment();
 
                 return true;

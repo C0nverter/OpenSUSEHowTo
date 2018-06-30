@@ -2,8 +2,12 @@ package pl.bugbreaker.opensusehowto;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
+
+import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -53,6 +57,7 @@ public class AsyncListLoad extends AsyncTask<String,Void,ArrayList<DataItem>> {
                 Elements mElementSectionDesc = mSectionDocument.select("span[class=section-desc]").eq(i);
                 String mSectionDesc = mElementSectionDesc.text();
 
+                u.addSubURL(target_url+"/section_"+i,i);
                 dataSet.add(new DataItem(mSectionTitle,mSectionDesc));
                 Log.d("DataItemCreation","Item no. "+i+" added");
                 Log.d("DataItemCreation","Link: "+u.getURL());
@@ -60,6 +65,8 @@ public class AsyncListLoad extends AsyncTask<String,Void,ArrayList<DataItem>> {
                 Log.d("DataItemCreation","Item description: "+dataSet.get(i).getTopicDesc());
             }
             publishProgress();
+        } catch (HttpStatusException h) {
+            Toast.makeText(activity,"Network error",Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();
         }
